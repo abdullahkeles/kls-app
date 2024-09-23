@@ -39,7 +39,7 @@ public class AuthService(IUserRepository userRepository, ITokenService tokenServ
         var token = await userRepository.GetRefreshToken(request.refreshToken.ToString());
         if (token is null)
             return ServiceResult.Fail(HttpStatusCode.NotFound, IdentityMessage.Auth.RefreshTokenNotFoun);
-        if (DateTime.UtcNow > token.TokenExpireDate)
+        if (!token.IsValid())
             return ServiceResult.Fail(HttpStatusCode.RequestTimeout, IdentityMessage.Auth.TokenExpired);
         var newToken = tokenService.CreateToken(token.UserName, token.Roles);
         await userRepository.SetRefreshToken(newToken.RefreshToken, newToken.RefreshExpire, token.UserId);

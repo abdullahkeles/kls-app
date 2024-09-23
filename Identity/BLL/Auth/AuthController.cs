@@ -8,9 +8,12 @@ using Shared.Helpers.Services;
 
 namespace Identity.BLL.Auth
 {
+    [Route("auth")]
     public class AuthController(IAuthService authService) : BaseController
     {
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> SingIn([FromBody] AuthRequest request) => ApiResponse(await authService.SingIn(request));
+        [HttpPost("refresh")]
+        public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequest request) => ApiResponse(await authService.SingInRefreshToken(request));
     }
 }

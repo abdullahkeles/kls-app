@@ -6,6 +6,7 @@ using Shared.BLL.Controllers;
 namespace Identity.BLL.Users
 {
     [Authorize(Roles = "develope,developer")]
+    [Route("user")]
     public class UserController : BaseController
     {
         [HttpGet]
