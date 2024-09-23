@@ -23,7 +23,6 @@ public static class ModuleExtensions
         IJwtContext jwtContext = new JwtContext(configuration);
         services.AddSingleton<IJwtContext, JwtContext>();
         services.AddAuthenticationJwt(jwtContext);
-        services.AddDatabaseContext<KlsIdentityDbContext>(ChosenDatabaseCnst.PostgreSQL, configuration);
         services.AddDatabaseContext<IdentityDbContext>(ChosenDatabaseCnst.PostgreSQL, configuration);
         services.AddKeyedScoped<IUnitOfWork, IdentityUnitOfWork>("uowIdentity");
         services.AddAutoMapper(Assembly.GetExecutingAssembly());

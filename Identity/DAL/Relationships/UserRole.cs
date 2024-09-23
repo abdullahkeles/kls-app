@@ -6,5 +6,5 @@ public class UserRole : IEntity<int>
 {
     public int Id { get; set; }
     public string UserId { get; set; }
-    public int RoleId { get; set; }
+    public string RoleId { get; set; }
 }

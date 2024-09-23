@@ -18,7 +18,7 @@ namespace Identity.DAL
         /// </summary>
         public DbSet<UserRole> UserRoles { get; set; }
 
-        protected override string Schema => "Identity2";
+        protected override string Schema => "Identity";
 
         // override protected void OnModelCreating(ModelBuilder modelBuilder)
         // {
@@ -29,8 +29,8 @@ namespace Identity.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = 1, RoleId = 1, UserId = "b77b129b-884f-49b4-bb5b-6237fe702246" });
-            modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = 2, RoleId = 1, UserId = "6f01392c-45b1-4dbf-9457-74a107fe6ada" });
+            modelBuilder.Entity<UserRole>().HasData(new UserRole {Id=1, RoleId = "3188a971-25cb-4d5e-b317-81251b78012b", UserId = "b77b129b-884f-49b4-bb5b-6237fe702246" });
+            modelBuilder.Entity<UserRole>().HasData(new UserRole {Id=2, RoleId = "3188a971-25cb-4d5e-b317-81251b78012b", UserId = "6f01392c-45b1-4dbf-9457-74a107fe6ada" });
             base.OnModelCreating(modelBuilder);
         }
     }

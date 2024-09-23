@@ -30,12 +30,6 @@ public static class AuthenticationExtension
             };
 
         });
-        services.Configure<IdentityOptions>(options =>
-{
-    // Default SignIn settings.
-    options.SignIn.RequireConfirmedEmail = false;
-    options.SignIn.RequireConfirmedPhoneNumber = false;
-});
         return services;
     }
 

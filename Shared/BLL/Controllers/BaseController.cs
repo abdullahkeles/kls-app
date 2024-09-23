@@ -4,7 +4,7 @@ using Shared.Helpers.Services;
 
 namespace Shared.BLL.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class BaseController : ControllerBase
     {

@@ -1,7 +1,5 @@
-using System;
-using Microsoft.AspNetCore.Identity.UI.Services;
+
 using Microsoft.Extensions.DependencyInjection;
-using Shared.BLL.Services;
 using Shared.DAL;
 using Shared.Helpers.Constants.AppSettings;
 
@@ -13,7 +11,6 @@ public static class ModuleExtensions
     {
         services.AddSingleton<IKlsAppContext, KlsAppContext>();
         services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
-        services.AddTransient<IEmailSender,EmailSenderService>();
         return services;
     }
 }

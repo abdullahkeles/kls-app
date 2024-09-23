@@ -9,10 +9,11 @@ public class RoleConfig : IEntityTypeConfiguration<Role>
     public void Configure(EntityTypeBuilder<Role> builder)
     {
         builder.Property(x => x.RoleName).IsRequired();
-        builder.HasData(new Role(){
-            Id=1,
-            RoleGrupId=1,
-            RoleName="developer"
+        builder.HasData(new Role()
+        {
+            Id = "3188a971-25cb-4d5e-b317-81251b78012b",
+            RoleGrupId = 1,
+            RoleName = "developer"
         });
     }
 }

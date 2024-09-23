@@ -1,5 +1,6 @@
 using Api.Extensions;
 using Identity;
+using Identity.DAL.Users;
 using Identity.Helpers.Extensions;
 using Shared;
 using Shared.DAL;
